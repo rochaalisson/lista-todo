@@ -1,13 +1,13 @@
-package com.ifba.todo;
+package com.ifba.notes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TodoApplication {
+public class NotesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TodoApplication.class, args);
+		SpringApplication.run(NotesApplication.class, args);
 	}
 
 }
