@@ -26,7 +26,6 @@ public class NotaService {
 		Nota nota = mapper.map(dto, Nota.class);
 		
 		nota = notaRepository.save(nota);
-		
 		return mapper.map(nota, NotaDto.class);
 	}
 	
@@ -48,6 +47,15 @@ public class NotaService {
 		Nota nota = notaRepository.findById(id).orElseThrow(EntityNotFoundException::new);
 		
 		nota.atualizarDados(dto);
+		
+		return mapper.map(nota, NotaDto.class);
+	}
+	
+	@Transactional
+	public NotaDto concluir(Integer id) {
+		Nota nota = notaRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+		
+		nota.concluir();
 		
 		return mapper.map(nota, NotaDto.class);
 	}

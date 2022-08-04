@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.ifba.notes.model.dto.CategoriaDto;
+
 import lombok.Getter;
 
 @Entity
@@ -15,4 +17,8 @@ public class Categoria {
 	private Integer id;
 	
 	private String nome;
+	
+	public void atualizarDados(CategoriaDto dto) {
+		this.nome = dto.getNome();
+	}
 }

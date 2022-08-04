@@ -1,5 +1,7 @@
 package com.ifba.notes.model.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,9 +11,11 @@ import javax.persistence.ManyToOne;
 import com.ifba.notes.model.dto.NotaDto;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
+@Setter
 public class Nota {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +23,8 @@ public class Nota {
 	
 	private String titulo;
 	private String conteudo;
+	private Boolean concluida;
+	private LocalDateTime horaConclusao;
 	
 	@ManyToOne
 	private Categoria categoria;
@@ -26,5 +32,10 @@ public class Nota {
 	public void atualizarDados(NotaDto dto) {
 		this.titulo = dto.getTitulo();
 		this.conteudo = dto.getConteudo();
+	}
+
+	public void concluir() {
+		this.concluida = true;
+		this.horaConclusao = LocalDateTime.now();
 	}
 }

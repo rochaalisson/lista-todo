@@ -6,10 +6,7 @@ import javax.validation.constraints.Positive;
 import lombok.Getter;
 
 @Getter
-public class NotaForm {
+public class CategoriaForm {
 	@NotNull
-	private String titulo;
-	private String conteudo;
-	@NotNull @Positive
-	private int idCategoria;
+	private String nome;
 }

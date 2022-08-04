@@ -55,6 +55,13 @@ public class NotaController {
 		return ResponseEntity.ok(nota);
 	}
 	
+	@PutMapping("/{id}/concluir")
+	public ResponseEntity<NotaDto> concluir(@PathVariable Integer id) {
+		NotaDto nota = notaService.concluir(id);
+		
+		return ResponseEntity.ok(nota);
+	}
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deletar(@PathVariable Integer id) {
 		notaService.deletar(id);
