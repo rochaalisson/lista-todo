@@ -10,4 +10,5 @@ public class NotaDto {
 	private Integer idCategoria;
 	private String titulo;
 	private String conteudo;
+	private Boolean concluida;
 }

@@ -11,6 +11,6 @@ public class NotaForm {
 	@NotEmpty
 	private String titulo;
 	private String conteudo;
-	@NotNull @Positive
+	@Positive
 	private Integer idCategoria;
 }
