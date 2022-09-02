@@ -1,12 +1,11 @@
 package com.ifba.notes.model.form;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 
 @Getter
 public class CategoriaForm {
-	@NotNull
+	@NotEmpty
 	private String nome;
 }

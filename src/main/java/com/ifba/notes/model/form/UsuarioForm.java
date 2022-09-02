@@ -1,0 +1,16 @@
+package com.ifba.notes.model.form;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import lombok.Data;
+
+@Data
+public class UsuarioForm {
+	@NotEmpty
+	private String nome;
+	@NotEmpty @Email
+	private String email;
+	@NotEmpty
+	private String senha;
+}

@@ -28,14 +28,17 @@ public class Nota {
 	
 	@ManyToOne
 	private Categoria categoria;
+	
+	@ManyToOne
+	private Usuario usuario;
 
 	public void atualizarDados(NotaDto dto) {
 		this.titulo = dto.getTitulo();
 		this.conteudo = dto.getConteudo();
 	}
 
-	public void concluir() {
-		this.concluida = true;
-		this.horaConclusao = LocalDateTime.now();
+	public void atualizarStatus(boolean estaConcluido) {
+		this.concluida = estaConcluido;
+		this.horaConclusao = estaConcluido ? LocalDateTime.now() : null;
 	}
 }
